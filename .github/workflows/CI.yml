@@ -1,6 +1,17 @@
-- name: Enviar alerta pro Discord
-  if: always()
-  run: |
-    curl -H "Content-Type: application/json" \
-    -d "{\"content\": \"🚨 Status: ${{ job.status }}\"}" \
-    ${{ secrets.DISCORDWEBHOOK }}
+name: CI com alerta Discord
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Discord notification
+        uses: Ilshidur/action-discord@0.3.2
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORDWEBHOOK }}
+        with:
+          args: '🚀 Deploy realizado!'

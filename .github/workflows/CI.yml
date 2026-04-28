@@ -1,4 +1,4 @@
-name: CI
+name: CI com alerta Discord
 
 on:
   push:
@@ -12,5 +12,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Rodar script
-        run: echo "Hello World"
+      - name: Rodar algo
+        run: echo "Testando CI"
+
+      - name: Enviar alerta pro Discord
+        if: always()
+        run: |
+          curl -H "Content-Type: application/json" \
+          -d "{\"content\": \"🚀 Workflow finalizado! Status: ${{ job.status }}\"}" \
+          ${{ secrets.DISCORDWEBHOOK }}
+
+      - name: Forçar erro
+        run: exit 1

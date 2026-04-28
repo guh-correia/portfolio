@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap');
+
+#home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-background {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1.5px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1.5px);
+    background-size: 50px 50px; /* Tamanho da célula do grid */
+  animation: moveGrid 4s linear infinite;
+}
+   
+@keyframes moveGrid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 0px;
+  }
+}
+
+.about-me {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Outfit', sans-serif;
+    backdrop-filter: blur(2.5px);
+    border: 2px solid #1d1d1d;
+    padding: 42px;
+    border-radius: 12px;
+    width: 1000px;
+}
+
+.image-shadow {
+    box-shadow: -25px -18px 100px -45px #C62300;
+    border-radius: 50px;
+    height: 400px;
+    margin: 20px;
+}
+
+.image-shadow img {
+    height: 100%;
+    border-radius: 50px;
+    box-shadow: 25px -18px 100px -45px #2F58CD;
+}
+
+.about-me .information {
+    padding-top: 22px;
+    display: flex;
+    flex-direction: column;
+
+    & span {
+        color: #6f5fef;
+    }
+
+    & h1, h2{
+        font-family: "Inter", sans-serif;
+        font-weight: 800;
+        line-height: 60px;
+    }
+
+    & h1 {
+        font-size: 38px;
+    }
+
+    & h2 {
+        font-size: 30px;
+    }
+
+    & p {
+        line-height: 25px;
+        width: 400px;
+    }
+    & i {
+        font-size: 10px;
+        color: aliceblue;
+    }
+}
+
+.icons {
+    margin-left: -4px;
+
+    & .social-icons {
+        font-size: 30px;
+        margin-top: 10px;
+        padding-right: 5px;
+
+        
+    } .social-icons:hover {
+        color: #5f4bf7;
+        transition: 0.3s;
+    }
+}
+

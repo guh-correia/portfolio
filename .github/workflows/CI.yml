@@ -1,8 +1,6 @@
-- name: Discord notification
-  env:
-    DISCORD_WEBHOOK: ${{ secrets.DISCORDWEBHOOK }}
-  uses: Ilshidur/action-discord@master
-  with:
-    args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed.'
-
-#teste
+- name: Enviar alerta pro Discord
+  if: always()
+  run: |
+    curl -H "Content-Type: application/json" \
+    -d "{\"content\": \"🚨 Status: ${{ job.status }}\"}" \
+    ${{ secrets.DISCORDWEBHOOK }}

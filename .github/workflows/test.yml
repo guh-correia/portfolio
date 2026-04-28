@@ -23,22 +23,22 @@ jobs:
       - name: Basic Content Test
         uses: ./
         with:
-          webhook-url: ${{ secrets.https://discord.com/api/webhooks/1498498085528277072/0vbfwrO_W2y6JD-Ut105tFral1uTPEjUOq3QeL3bsTWCaEY41enJqcwdja1wUztOX1-C }}
+          webhook-url: ${{ secrets.WEBHOOKDISCORD }}
           content: test
       - name: Test `@ping`
         uses: ./
         with:
-          webhook-url: ${{ secrets.https://discord.com/api/webhooks/1498498085528277072/0vbfwrO_W2y6JD-Ut105tFral1uTPEjUOq3QeL3bsTWCaEY41enJqcwdja1wUztOX1-C }}
+          webhook-url: ${{ secrets.WEBHOOKDISCORD }}
           content: Hey there <@211894927997534208>
       - name: Test with JSON Payload Provided
         uses: ./
         with:
-          webhook-url: ${{ secrets.https://discord.com/api/webhooks/1498498085528277072/0vbfwrO_W2y6JD-Ut105tFral1uTPEjUOq3QeL3bsTWCaEY41enJqcwdja1wUztOX1-C }}
+          webhook-url: ${{ secrets.WEBHOOKDISCORD }}
           raw-data: __tests__/data/content-only.json
       - name: Upload File
         uses: ./
         with:
-          webhook-url: ${{ secrets.https://discord.com/api/webhooks/1498498085528277072/0vbfwrO_W2y6JD-Ut105tFral1uTPEjUOq3QeL3bsTWCaEY41enJqcwdja1wUztOX1-C }}
+          webhook-url: ${{ secrets.WEBHOOKDISCORD }}
           filename: __tests__/data/content-only.json
           username: Bill
           content: You should definintely be able to do this
@@ -46,7 +46,7 @@ jobs:
       - name: Discord Webhook Action With Embed
         uses: ./
         with:
-          webhook-url: ${{ https://discord.com/api/webhooks/1498498085528277072/0vbfwrO_W2y6JD-Ut105tFral1uTPEjUOq3QeL3bsTWCaEY41enJqcwdja1wUztOX1-C }}
+          webhook-url: ${{ WEBHOOKDISCORD }}
           username: Bill
           avatar-url: https://cdn.discordapp.com/avatars/742807869023322232/dd41912939ffccbea0276f70688fa0ec.webp?size=256
           embed-title: "Foo"
@@ -66,7 +66,7 @@ jobs:
       - name: Discord Webhook Action With Embed Description That's Too Long
         uses: ./
         with:
-          webhook-url: ${{ secrets.https://discord.com/api/webhooks/1498498085528277072/0vbfwrO_W2y6JD-Ut105tFral1uTPEjUOq3QeL3bsTWCaEY41enJqcwdja1wUztOX1-C }}
+          webhook-url: ${{ secrets.WEBHOOKDISCORD }}
           username: Bill
           avatar-url: https://cdn.discordapp.com/avatars/742807869023322232/dd41912939ffccbea0276f70688fa0ec.webp?size=256
           embed-title: "Foo"

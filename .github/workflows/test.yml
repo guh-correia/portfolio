@@ -46,7 +46,7 @@ jobs:
       - name: Discord Webhook Action With Embed
         uses: ./
         with:
-          webhook-url: ${{ WEBHOOKDISCORD }}
+          webhook-url: ${{ secrets.WEBHOOKDISCORD }}
           username: Bill
           avatar-url: https://cdn.discordapp.com/avatars/742807869023322232/dd41912939ffccbea0276f70688fa0ec.webp?size=256
           embed-title: "Foo"

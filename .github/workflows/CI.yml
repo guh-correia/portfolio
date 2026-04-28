@@ -1,18 +1,16 @@
-name: CI com alerta Discord
+name: Teste Discord
 
 on:
   push:
-    branches: [ "master, main, develop" ]
+    branches: [ "master", "main", "develop" ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Discord notification
-        uses: Ilshidur/action-discord@0.3.2
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORDWEBHOOK }}
-        with:
-          args: '🚀 Deploy realizado!'
-          #teste 
+      - name: Enviar alerta
+        run: |
+          curl -H "Content-Type: application/json" \
+          -d "{\"content\": \"🔥 Teste funcionando\"}" \
+          ${{ secrets.DISCORDWEBHOOK }}

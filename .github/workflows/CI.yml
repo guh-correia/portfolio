@@ -2,7 +2,7 @@ name: CI com alerta Discord
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master, mainm develop" ]
 
 jobs:
   build:
@@ -15,4 +15,4 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORDWEBHOOK }}
         with:
           args: '🚀 Deploy realizado!'
-          #teste
+          #teste teste

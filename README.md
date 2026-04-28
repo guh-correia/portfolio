@@ -1,1 +1,0 @@
-Começando a aprender sobre DevOps

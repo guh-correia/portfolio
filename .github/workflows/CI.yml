@@ -2,7 +2,7 @@ name: CI com alerta Discord
 
 on:
   push:
-    branches: [ "master, mainm develop" ]
+    branches: [ "master, main, develop" ]
 
 jobs:
   build:
